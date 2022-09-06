@@ -14,7 +14,7 @@ headers={
 
 
 last_job=[]
-print(last_job)
+# print(last_job)
 def send_mail(new_job):
         if not last_job:
             last_job.append(new_job)
@@ -51,12 +51,14 @@ while True:
 
     KEY_WORDS=[PYTHON_,DJANGO,BACK_END]
 
+   
+
     for article in articles:
         job=article.text.lower()
+        
         for key_word in KEY_WORDS:
             if key_word in job:
                 if not last_job or f"https://quera.org/{article.h2.a['href']}" != last_job[0]:
-                    print(f"https://quera.org/{article.h2.a['href']}")
                     recent_job =f"https://quera.org/{article.h2.a['href']}"
                     break
                 else:
@@ -66,14 +68,14 @@ while True:
         if key_word not in job:
             continue
         else:
-            break  
-            
+            break    
+    
     if recent_job != None:
         print(recent_job)
         send_mail(recent_job)
     else:
         pass 
-    time.sleep(10)  
+    time.sleep(1800)  
 
 
 
