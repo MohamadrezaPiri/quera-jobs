@@ -51,8 +51,6 @@ while True:
 
     KEY_WORDS=[PYTHON_,DJANGO,BACK_END]
 
-   
-
     for article in articles:
         job=article.text.lower()
         
