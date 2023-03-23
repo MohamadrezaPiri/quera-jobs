@@ -45,16 +45,16 @@ while True:
     soup = BeautifulSoup(page.content,"html.parser")
     articles=soup.find_all("article")
 
-    PYTHON_="python"  
-    DJANGO="django"
-    BACK_END="back-end"
+    python_="python"  
+    django="django"
+    back_end="back-end"
 
-    KEY_WORDS=[PYTHON_,DJANGO,BACK_END]
+    key_words=[python_,django,back_end]
 
     for article in articles:
         job=article.text.lower()
         
-        for key_word in KEY_WORDS:
+        for key_word in key_words:
             if key_word in job:
                 if not last_job or f"https://quera.org/{article.h2.a['href']}" != last_job[0]:
                     recent_job =f"https://quera.org/{article.h2.a['href']}"
