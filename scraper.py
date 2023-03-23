@@ -26,14 +26,14 @@ def send_mail(new_job):
         server.starttls()
         server.ehlo()
 
-        server.login('piri8993@gmail.com', 'bezieujszsqloltf')
+        server.login('sender@gmail.com', 'bezieujszsqloltf')
 
         subject='New junior/intern job'
         body= f"A new junior/intern job has been defined: {new_job}"
 
         msg=f'Subject: {subject}\n\n{body}'
 
-        server.sendmail('piri8993@gmail.com', 'piry.mreza@gmail.com', msg)
+        server.sendmail('sender@gmail.com', 'reciever@gmail.com', msg)
         print('Email has been sent')
 
         server.quit()
